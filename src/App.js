@@ -19,14 +19,12 @@ class App extends Component {
   render() {
     const { isAuthenticated } = this.props;
     const routesHtml = Routes.map(({ path, exact, component, isPrivate }) => {
-      console.log("isPrivate", isPrivate, Routes);
       return isPrivate ? (
         <ProtectedRoute key={path} path={path} exact={exact} component={component} />
       ) : (
         <Route key={path} path={path} exact={exact} component={component} />
       );
     });
-    console.log("routeHtml ----", routesHtml);
     return (
       <Suspense fallback='Loading'>
         {isAuthenticated ? <HeaderComp /> : null}

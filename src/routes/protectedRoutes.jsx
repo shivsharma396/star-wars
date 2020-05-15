@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
 const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
-  console.log("ProtectedRoute isAuthenticated ---", isAuthenticated);
   return (
     <Route
       {...rest}

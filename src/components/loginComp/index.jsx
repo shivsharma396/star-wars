@@ -59,7 +59,6 @@ class LoginComp extends Component {
 }
 
 const mapStateToProps = ({ UserReducers }) => {
-  console.log("UserReducers---", UserReducers);
   return {
     isAuthenticated: UserReducers.isAuthenticated
   };
